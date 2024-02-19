@@ -1,0 +1,2 @@
+/bin/ar qc libheat.a CMakeFiles/heat.dir/heat.c.o
+/bin/ranlib libheat.a

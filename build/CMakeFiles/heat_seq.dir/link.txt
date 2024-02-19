@@ -1,0 +1,1 @@
+/bin/cc -rdynamic CMakeFiles/heat_seq.dir/heat_seq.c.o CMakeFiles/heat_seq.dir/mat_utils.c.o -o heat_seq  -Wl,-rpath,:::::::::::::: lib/libheat.a -lm 

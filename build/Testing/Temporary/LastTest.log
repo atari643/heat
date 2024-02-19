@@ -1,0 +1,55 @@
+Start testing: Feb 19 09:19 CET
+----------------------------------------------------------
+1/2 Testing: heat_seq_usage
+1/2 Test: heat_seq_usage
+Command: "/mnt/netta/users/qartigala/Bureau/heat/build/heat_seq"
+Directory: /mnt/netta/users/qartigala/Bureau/heat/build
+"heat_seq_usage" start time: Feb 19 09:19 CET
+Output:
+----------------------------------------------------------
+Usage: /mnt/netta/users/qartigala/Bureau/heat/build/heat_seq nx ny iter_max save
+	nx       number of discretisation points in X
+	ny       number of discretisation points in Y
+	iter_max maximal number of iterations in temporal loop
+	save     boolean flag (1 or 0) for recording states
+	print    boolean flag (1 or 0) for printing the states matrix to the standard output
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Pass Reason:
+Required regular expression found. Regex=[Usage*]
+"heat_seq_usage" end time: Feb 19 09:19 CET
+"heat_seq_usage" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: heat_seq_err_10
+2/2 Test: heat_seq_err_10
+Command: "/mnt/netta/users/qartigala/Bureau/heat/build/heat_seq" "10" "10" "1" "1" "1"
+Directory: /mnt/netta/users/qartigala/Bureau/heat/build
+"heat_seq_err_10" start time: Feb 19 09:19 CET
+Output:
+----------------------------------------------------------
+heat: it = 0, t = 0.000e+00, err = 1.732e+00
+heat: 
+[heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000
+heat: 1.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 1.000000
+heat: 1.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 1.000000
+heat: 1.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 1.000000
+heat: 1.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 1.000000
+heat: 1.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 1.000000
+heat: 1.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 1.000000
+heat: 1.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 1.000000
+heat: 1.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 1.000000
+heat: 1.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 1.000000
+heat: 1.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 0.000000,heat: 1.000000
+heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000,heat: 1.000000]
+<DartMeasurement name="Perf" type="numeric/double">9.6e-05</DartMeasurement>
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"heat_seq_err_10" end time: Feb 19 09:19 CET
+"heat_seq_err_10" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 19 09:19 CET
