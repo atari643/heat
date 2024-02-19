@@ -8,7 +8,7 @@ before_script:
 build:
   stage: build
   script:
-    - cd build && cmake .. -DCMAKE_C_FLAGS="--coverage" && make .
+    - cd build && cmake .. -DCMAKE_C_FLAGS="--coverage" && make
     
   artifacts:
     untracked: false
