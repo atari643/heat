@@ -1,3 +1,0 @@
-heat_seq_usage 1 0.00276795
-heat_seq_err_10 1 0.0021927
----
