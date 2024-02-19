@@ -10,7 +10,7 @@ build:
   script:
     - make
     - cd build
-    - cmake .. -DCMAKE_C_FLAGS="--coverage"
+    - cmake .. -DCMAKE_C_FLAGS="--coverage" && make
     
   artifacts:
     untracked: false
