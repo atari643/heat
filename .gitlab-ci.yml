@@ -17,7 +17,7 @@ job2:
 job3:
   image: tthor/heat
   script:
-    - cmake
+    - cmake .
     - make
     - ctest
   tags: ['docker']
