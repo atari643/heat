@@ -1,22 +1,18 @@
+cache:
+  paths:
+    - /home/gitlab-runner/cache/project-namespace/project-name/cache-key
+
 stages:
   - build
   - test
 
-before_script:
-  - mkdir -p build
-
 build:
-  artifacts:
-    expire_in: 1 day
-    paths:
-      - build
   stage: build
   script:
-    - cd build && cmake .. && make
-    
+    - cmake . && make
+
 test:
   stage: test
-  dependencies:
-    - build
   script:
-    - cd build && ctest
+    - ctest
+
