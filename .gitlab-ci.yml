@@ -1,6 +1,18 @@
-image: tthor/heat
-test:
-  script:
-    - hostname
-    - whoami
-  tags: ['docker']
+default:
+  image: ubuntu
+
+job1:
+  image: tthor/heat
+  test:
+	  script:
+	    - hostname
+	    - whoami
+	  tags: ['docker']
+
+job2:
+  image: tthor/test
+  test:
+	  script:
+	    - hostname
+	    - whoami
+	  tags: ['docker']
