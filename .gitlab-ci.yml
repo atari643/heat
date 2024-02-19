@@ -1,6 +1,6 @@
 stages:
-- build
-- test
+  - build
+  - test
 
 before_script:
   - mkdir -p build
@@ -9,9 +9,13 @@ build:
   stage: build
   script:
     - cd build && cmake .. && make
-  # use the artifact keyword here to save the build directory in a zip archive uploaded on gitlab
+  artifacts:
+    paths:
+      - build/
+    expire_in: 1 week
 
 test:
   stage: test
   script:
     - cd build && ctest
+
