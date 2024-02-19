@@ -14,7 +14,7 @@ job2:
     - hostname
     - whoami
   tags: ['docker']
- job3:
+job3:
   image: tthor/heat
   script:
     - cmake
