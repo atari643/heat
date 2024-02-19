@@ -1,42 +1,20 @@
-default:
-  image: tthor/heat
-  tags: ['docker']
+stages:
+- build
+- test
+- other
 
-job1:
-  image: tthor/heat
+build:
+  stage: build
   script:
-    - hostname
-    - whoami
-  tags: ['docker']
+    - cmake . && make
 
-job2:
-  image: tthor/test
+test:
+  stage: test
   script:
-    - hostname
-    - whoami
-  tags: ['docker']
-job3:
-  image: tthor/heat
-  script:
-    - cmake .
-    - make
-    - ctest
-  tags: ['docker']
-.build_test_script: &build_test_script
-  script:
-    - cmake .
-    - make
-    - ctest
+    - cmake . && make && ctest
 
-linux-gcc:
-  <<: *build_test_script
-  variables:
-    CC: "gcc"
-    CXX: "g++"
-
-linux-clang:
-  <<: *build_test_script
-  variables:
-    CC: "clang"
-    CXX: "clang++"
+documentation:
+  stage: other
+  script:
+    - cmake . -DHEAT_DOC=ON && make doc
 
