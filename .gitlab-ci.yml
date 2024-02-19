@@ -22,20 +22,21 @@ job3:
     - make
     - ctest
   tags: ['docker']
-linux-gcc:
-  variables:
-    CC: gcc
-    CXX: g++
+.build_test_script: &build_test_script
   script:
     - cmake .
     - make
     - ctest
 
-linux-clang:
+linux-gcc:
+  <<: *build_test_script
   variables:
-    CC: clang
-    CXX: clang++
-  script:
-    - cmake .
-    - make
-    - ctest 
+    CC: "gcc"
+    CXX: "g++"
+
+linux-clang:
+  <<: *build_test_script
+  variables:
+    CC: "clang"
+    CXX: "clang++"
+
