@@ -1,10 +1,15 @@
+stages:
+  - build
+  - test
+
 before_script:
   - mkdir -p build
 
 build:
   stage: build
   script:
-    - cd build && cmake ..
+    - cd build
+    - cmake .. -DCMAKE_C_FLAGS="--coverage"
   artifacts:
     untracked: false
     when: on_success
@@ -14,11 +19,12 @@ build:
 test:
   stage: test
   script:
-    - cd build && ctest
-  after_script:
+    - cd build
+    - ctest
     - gcovr -r ..
   artifacts:
-    reports:
-      cobertura: coverage.xml
+    untracked: false
+    when: on_success
     paths:
       - build
+      - coverage.txt
