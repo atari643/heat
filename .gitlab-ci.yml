@@ -21,3 +21,20 @@ job3:
     - make
     - ctest
   tags: ['docker']
+linux-gcc:
+  variables:
+    CC: gcc
+    CXX: g++
+  script:
+    - cmake .
+    - make
+    - ctest
+
+linux-clang:
+  variables:
+    CC: clang
+    CXX: clang++
+  script:
+    - cmake .
+    - make
+    - ctest 
