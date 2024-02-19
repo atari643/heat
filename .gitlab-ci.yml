@@ -1,32 +1,24 @@
-cache:
-  untracked: true
+before_script:
+  - mkdir -p build
 
 build:
   stage: build
-  script: cmake . && make
+  script:
+    - cd build && cmake ..
+  artifacts:
+    untracked: false
+    when: on_success
+    paths:
+      - build
 
-test-master:
+test:
   stage: test
-  script: ctest
-  only:
-    - master
-
-test-branches:
-  stage: test
-  script: ctest -R heat_seq
-  except:
-    - master
-
-documentation:
-  stage: deploy
-  script: 
-    - cmake . -DHEAT_DOC=ON
-    - make doc
-  allow_failure: true
-  when: manual
-  only:
-    changes:
-      - "*.c"
-      - "*.h"
-      - "doc/*"
-
+  script:
+    - cd build && ctest
+  after_script:
+    - gcovr -r ..
+  artifacts:
+    reports:
+      cobertura: coverage.xml
+    paths:
+      - build
