@@ -3,16 +3,14 @@ default:
 
 job1:
   image: tthor/heat
-  test:
-	  script:
-	    - hostname
-	    - whoami
-	  tags: ['docker']
+  script:
+    - hostname
+    - whoami
+  tags: ['docker']
 
 job2:
   image: tthor/test
-  test:
-	  script:
-	    - hostname
-	    - whoami
-	  tags: ['docker']
+  script:
+    - hostname
+    - whoami
+  tags: ['docker']
