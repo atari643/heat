@@ -6,14 +6,14 @@ before_script:
   - mkdir -p build
 
 build:
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - build
   stage: build
   script:
     - cd build && cmake .. && make
-  artifacts:
-    paths:
-      - build/
-    expire_in: 1 week
-
+    
 test:
   stage: test
   dependencies:
