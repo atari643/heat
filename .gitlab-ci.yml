@@ -20,10 +20,14 @@ test:
   stage: test
   script:
     - cd build
-    - ctest
+    - ctest --no-compress-output -T Test -V
+    - xsltproc -o report.xml ../tools/ctest-to-junit.xsl Testing/**/Test.xml
     - gcovr -r ..
   artifacts:
     untracked: false
+    reports:
+      junit: build/report.xml
+
     when: on_success
     paths:
       - build
