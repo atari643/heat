@@ -1,18 +1,23 @@
 cache:
-  paths:
-    - /home/gitlab-runner/cache/project-namespace/project-name/cache-key
-
-stages:
-  - build
-  - test
+  untracked: true
 
 build:
   stage: build
-  script:
-    - cmake . && make
+  script: cmake . && make
 
-test:
+test-master:
   stage: test
-  script:
-    - ctest
+  script: ctest
+  # fill so that this job is only executed on the master branch
 
+test-branches:
+  stage: test
+  script: ctest -R heat_seq
+  # fill so that this job is only executed on all branches except master
+
+documentation:
+  stage: deploy
+  script: ["cmake . -DHEAT_DOC=ON", "make doc"]
+  # fill to allow failure of this job without making the pipeline in a failure state
+  # fill with the when keyword to be able to trigger this job manually
+  # fill with the only and changes keywords to enable this only if some files *.c or *.h change or files in the doc/ directory
