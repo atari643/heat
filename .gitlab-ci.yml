@@ -16,6 +16,7 @@ build:
 
 test:
   stage: test
+  dependencies:
+    - build
   script:
     - cd build && ctest
-
